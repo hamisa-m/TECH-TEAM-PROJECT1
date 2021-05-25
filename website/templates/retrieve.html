@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{% block title %} Retrieved Contact {% endblock %}</h1>
+<span class="badge badge-primary">{{ contact['created']}}</span>
+<table border="2">
+    <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email</td>
+        <td>Phone Number</td>
+    </tr>
+    <tr>
+        <td>{{ contact['firstName']}}</td>
+        <td>{{ contact['lastName']}}</td>
+        <td>{{ contact['email']}}</td>
+        <td>{{ contact['phone']}}</td>
+    </tr>
+</table>
+{% endblock %}

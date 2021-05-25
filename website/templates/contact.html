@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{% block title %} Contact {% endblock %}</h2>
+<span class="badge badge-primary">{{ contact['created']}}</span>
+<p> {{ contact['firstName'], contact['lastName'], contact['email'], contact['phone']}}</p>
+{% endblock %}

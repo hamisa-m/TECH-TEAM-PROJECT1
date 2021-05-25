@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content%}
+    <h1>{% block title %} Home Page {% endblock%} </h1>
+    
+          <table border="2">
+              <tr>
+                  <td ><b>First Name</b></td>
+                  <td ><b>Last Name</b></td>
+                  <td align="center"><b> Email</b></td>
+                  <td ><b>Phone Number</b></td>
+                  <td > <b>Action </b></td>
+              </tr>
+              {% for contact in contacts %}
+              <tr>
+                    <td><a href="{{ url_for('auth.contact', contact_id=contact['id'])}}">{{ contact['firstName']}}</a></td>
+                    <td>{{ contact['lastName']}}</td>
+                    <td>{{ contact['email']}}</td>
+                    <td>{{ contact['phone']}}</td>
+                    <td bgcolor="grey"><a href="{{ url_for('auth.edit_contact', id=contact['id'])}}">Edit</a><br>
+                        <a href="{{ url_for('auth.delete_contact', id=contact['id'])}}">Delete</a>
+                    </td>
+
+                  
+              </tr>
+              {% endfor %}
+          </table>
+          
+        
+        <hr>
+    
+
+{% endblock %}
